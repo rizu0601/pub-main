@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git url: 'https://github.com/rizu0601/Swiggy-FEcode.git', branch: 'main'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Run your build steps here'
+                // For example: sh './build.sh'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Run your tests here'
+                // For example: sh 'npm test'
+            }
+        }
+    }
+}
